@@ -71,6 +71,10 @@ This application creates a database of execution times and accuracy of various t
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=black&labelColor=white" />
 
 This application will contain scripts in other languages to get the native run time performance.
+
+## *RSFS  algorithm*
+
+This is a dimensionality reduction algorithm implemented in Python. Please this [article](https://gksriharsha.medium.com/random-subset-feature-selection-a-dimensionality-reduction-approach-8f2b3876acd8) for more details.
 ## About me
 
 <hr>
