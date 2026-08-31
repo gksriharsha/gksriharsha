@@ -1,0 +1,57 @@
+# Regenerates assets/stats-{dark,light}.svg from live GitHub data.
+#
+# One-time setup after committing:
+#   Settings -> Actions -> General -> Workflow permissions
+#   -> "Read and write permissions" -> Save
+#
+# Optional but recommended: the built-in GITHUB_TOKEN cannot always read
+# contributionsCollection, in which case the contribution and PR counts are
+# omitted from the card. To get them, create a classic personal access token
+# with the read:user scope and add it as a repository secret named STATS_TOKEN.
+# The workflow prefers it automatically when present.
+
+name: Refresh stats card
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * *"      # daily, 05:17 UTC
+  workflow_dispatch:
+
+# Never let two runs race on the same commit.
+concurrency:
+  group: stats-card
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render the cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python3 assets/make_stats_svg.py
+
+      - name: Commit if anything changed
+        run: |
+          if [ -z "$(git status --porcelain assets/)" ]; then
+            echo "cards unchanged; nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats-dark.svg assets/stats-light.svg
+          git commit -m "chore: refresh stats card [skip ci]"
+          git push

@@ -31,9 +31,9 @@ Most of what I build starts as a question I couldn't find a clean answer to. *Ho
 
 <br />
 
-## The thing I keep explaining at parties
+## Why a graph database
 
-Ask a relational database for your first cousins and you get four self-joins and a headache. Ask a graph: walk up two edges, walk back down two edges, done. Here's that query actually running.
+Resolving "first cousins" in a relational schema takes several self-joins and a recursive CTE. In a graph it is a single traversal: walk up two `child_of` edges, then back down two. Below is that query running against the family tree.
 
 <div align="center">
 
@@ -184,14 +184,9 @@ I write long-form build logs — the reasoning and the dead ends, not just the f
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=gksriharsha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9&bg_color=0D1117" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=gksriharsha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=1F6FEB&icon_color=1F6FEB&text_color=24292F&bg_color=FFFFFF" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=gksriharsha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub stats" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=gksriharsha&layout=compact&langs_count=8&count_private=true&hide_border=true&title_color=58A6FF&text_color=C9D1D9&bg_color=0D1117" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=gksriharsha&layout=compact&langs_count=8&count_private=true&hide_border=true&title_color=1F6FEB&text_color=24292F&bg_color=FFFFFF" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gksriharsha&layout=compact&langs_count=8&count_private=true&hide_border=true" alt="Top languages" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg" />
+  <img src="assets/stats-dark.svg" alt="Contribution counts and language breakdown, regenerated daily from the GitHub API" width="100%" />
 </picture>
 
 <picture>
@@ -199,14 +194,6 @@ I write long-form build logs — the reasoning and the dead ends, not just the f
   <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=gksriharsha&hide_border=true&background=FFFFFF&stroke=D0D7DE&ring=1F6FEB&fire=1F6FEB&currStreakLabel=1F6FEB&sideLabels=24292F&currStreakNum=24292F&sideNums=24292F&dates=57606A" />
   <img src="https://streak-stats.demolab.com?user=gksriharsha&hide_border=true" alt="Contribution streak" />
 </picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gksriharsha&hide_border=true&area=true&bg_color=0D1117&color=C9D1D9&line=58A6FF&point=FFFFFF&title_color=58A6FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gksriharsha&hide_border=true&area=true&bg_color=FFFFFF&color=24292F&line=1F6FEB&point=1F6FEB&title_color=1F6FEB" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gksriharsha&hide_border=true&area=true" alt="Contribution activity graph" width="100%" />
-</picture>
-
-<img src="https://github-profile-trophy.vercel.app/?username=gksriharsha&theme=nord&no-frame=true&no-bg=true&margin-w=6&margin-h=8&column=7" alt="Trophies" />
 
 </div>
 

@@ -1,0 +1,20 @@
+{
+  "_comment": "Seed values so the cards render correctly on the very first push. The stats workflow overwrites these SVGs with live API data on that same push, and daily after.",
+  "contributions": 1847,
+  "commits": null,
+  "repos": 9,
+  "stars": 1,
+  "followers": null,
+  "prs": null,
+  "since": "2019-06",
+  "languages": {
+    "Python": 341416,
+    "HTML": 266639,
+    "TypeScript": 83018,
+    "CSS": 33449,
+    "Groovy": 24712,
+    "Shell": 2805,
+    "Dockerfile": 1568,
+    "SCSS": 1465
+  }
+}
